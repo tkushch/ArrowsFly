@@ -1,0 +1,4 @@
+#Mon Oct 26 21:55:33 MSK 2020
+base.0=C\:\\Users\\timof\\StudioProjects\\SpaceArrays\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
