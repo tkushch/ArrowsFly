@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-
+//smth new
 public class Rocket {
     float x, y, vx, vy;
     Bitmap image;
