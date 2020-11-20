@@ -5,12 +5,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import OldClasses.Rocket;
+import OldClasses.Sky;
 
 public class MyDraw extends View {
 
@@ -34,7 +35,7 @@ public class MyDraw extends View {
 	float[] oldvx = new float[n];
 	float[] oldvy = new float[n];
 
-	public static float rnd(float min, float max){
+	public static float rnd(float min, float max) {
 		max -= min;
 		return (float) (Math.random() * ++max) + min;
 	}
@@ -42,9 +43,9 @@ public class MyDraw extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		drawSky(canvas);
-		for (int i = 0; i < n; i++){
+		for (int i = 0; i < n; i++) {
 			rockets[i].draw(canvas, paint);
-			if (r > 1000){
+			if (r > 1000) {
 				r = 0;
 			}
 			rockets[i].move(r, stopped, canvas);
@@ -55,14 +56,14 @@ public class MyDraw extends View {
 		invalidate();
 	}
 
-	void drawSky(Canvas canvas){
+	void drawSky(Canvas canvas) {
 		sky.draw(canvas, paint);
 	}
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
-		for (int i = 0; i < n; i++){
+		for (int i = 0; i < n; i++) {
 			rockets[i] = new Rocket(rnd(0, w), rnd(0, h), rnd(-3f, 3f), rnd(-3f, 3f), rocketImage);
 		}
 	}
