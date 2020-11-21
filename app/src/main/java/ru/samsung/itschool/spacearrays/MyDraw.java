@@ -1,8 +1,6 @@
 package ru.samsung.itschool.spacearrays;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -15,7 +13,7 @@ public class MyDraw extends View {
     private Sky sky;
     private Star[] stars;
     //private Rocket[] rockets;
-    private Rect[] rects;
+    private Bounce[] bounces;
     private int nrockets = 5;
     private int nstars = 500;
     private boolean first = true;
@@ -28,7 +26,7 @@ public class MyDraw extends View {
         this.sky = new Sky(stars);
         this.stars = new Star[nstars];
         //this.rockets = new Rocket[nrockets];
-        this.rects = new Rect[nrockets];
+        this.bounces = new Bounce[nrockets];
     }
 
 
@@ -47,7 +45,7 @@ public class MyDraw extends View {
                 );
 
                  */
-                rects[i] = new Rect(
+                bounces[i] = new Bounce(
                         getWidth() / 2,
                         getHeight() / 2,
                         rnd(-5, 5),
@@ -72,9 +70,9 @@ public class MyDraw extends View {
         }
 
          */
-        for (Rect rect : rects) {
-            rect.draw(canvas, paint);
-            rect.move(canvas);
+        for (Bounce bounce : bounces) {
+            bounce.draw(canvas, paint);
+            bounce.move(canvas);
         }
         invalidate();
     }
@@ -104,10 +102,10 @@ public class MyDraw extends View {
         // координаты Touch-события
         int evX = (int) event.getX();
         int evY = (int) event.getY();
-        for (Rect rect : rects) {
-            int x = rect.getX();
-            int y = rect.getY();
-            int side = rect.getSide();
+        for (Bounce bounce : bounces) {
+            int x = bounce.getX();
+            int y = bounce.getY();
+            int side = bounce.getSide();
 
             switch (event.getAction()) {
                 // касание началось
@@ -115,19 +113,19 @@ public class MyDraw extends View {
                     // если касание было начато в пределах квадрата
                     if (evX >= x && evX <= x + side && evY >= y && evY <= y + side) {
                         // включаем режим перетаскивания
-                        rect.setDrag(true);
+                        bounce.setDrag(true);
                         // разница между левым верхним углом квадрата и точкой касания
-                        rect.setDragX(evX - x);
-                        rect.setDragY(evY - y);
+                        bounce.setDragX(evX - x);
+                        bounce.setDragY(evY - y);
                     }
                     break;
                 // тащим
                 case MotionEvent.ACTION_MOVE:
                     // если режим перетаскивания включен
-                    if (rect.isDrag()) {
+                    if (bounce.isDrag()) {
                         // определеяем новые координаты для рисования
-                        rect.setX(evX - rect.getDragX());
-                        rect.setY(evY - rect.getDragY());
+                        bounce.setX(evX - bounce.getDragX());
+                        bounce.setY(evY - bounce.getDragY());
                         // перерисовываем экра
                         invalidate();
                     }
@@ -135,7 +133,7 @@ public class MyDraw extends View {
                 // касание завершено
                 case MotionEvent.ACTION_UP:
                     // выключаем режим перетаскивания
-                    rect.setDrag(false);
+                    bounce.setDrag(false);
                     break;
             }
         }

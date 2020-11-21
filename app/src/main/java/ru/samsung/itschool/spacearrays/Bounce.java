@@ -5,7 +5,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 
-class Rect extends BaseObject implements Movable, Touchable {
+
+class Bounce extends BaseObject implements Movable, Touchable {
     private int vx, vy;
     private boolean drag = false;
     private int side = 200;
@@ -40,7 +41,7 @@ class Rect extends BaseObject implements Movable, Touchable {
         this.drag = drag;
     }
 
-    public Rect(int x, int y, int vx, int vy) {
+    public Bounce(int x, int y, int vx, int vy) {
         super(x, y);
         this.vx = vx;
         this.vy = vy;
@@ -59,20 +60,51 @@ class Rect extends BaseObject implements Movable, Touchable {
     @Override
     public void draw(Canvas canvas, Paint paint) {
         paint.setAlpha(255);
-        paint.setColor((Color.YELLOW + Color.BLACK) / 2);
-        canvas.drawRect(getX(), getY(), getX() + side, getY() + side, paint);
+        paint.setColor(Color.YELLOW);
+        canvas.drawCircle(getX() + side / 2, getY() + side / 2, side / 2, paint);
+        paint.setColor(Color.BLACK);
+        canvas.drawCircle(getX() + side / 2, getY() + side / 2, side / 2 - (side / 100 * 5), paint);
+
 
     }
 
     public void move(Canvas canvas) {
         if (!drag) {
+
             int x = getX(), y = getY();
-            if (x + side > canvas.getWidth() && vx > 0) vx = -vx;
-            if (x < 0 && vx < 0) vx = -vx;
-            if (y + side > canvas.getHeight() && vy > 0) vy = -vy;
-            if (y < 0 && vy < 0) vy = -vy;
+
+            if (x + side > canvas.getWidth() && vx >= 0) {
+                if (vx == 0) {
+                    vx = -5;
+                } else {
+                    vx = -vx;
+                }
+            }
+            if (x < 0 && vx <= 0) {
+                if (vx == 0) {
+                    vx = 5;
+                } else {
+                    vx = -vx;
+                }
+            }
+            if (y + side > canvas.getHeight() && vy >= 0) {
+                if (vy == 0) {
+                    vy = -5;
+                } else {
+                    vy = -vy;
+                }
+            }
+            if (y < 0 && vy <= 0) {
+                if (vy == 0) {
+                    vy = 5;
+                } else {
+                    vy = -vy;
+                }
+            }
+
             setX(x + vx);
             setY(y + vy);
+
         }
     }
 
