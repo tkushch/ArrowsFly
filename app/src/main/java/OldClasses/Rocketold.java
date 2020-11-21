@@ -6,11 +6,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 
 
-public class Rocket {
+public class Rocketold {
     float x, y, vx, vy;
     Bitmap image;
 
-    Rocket(float x, float y, float vx, float vy, Bitmap image) {
+    Rocketold(float x, float y, float vx, float vy, Bitmap image) {
         this.x = x;
         this.y = y;
         this.vx = vx;

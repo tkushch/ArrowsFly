@@ -11,7 +11,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+/*
     public boolean onTouchEvent(MotionEvent event) {
         double x = event.getX();
         double y = event.getY();
@@ -24,6 +24,8 @@ public class MainActivity extends Activity {
         }
         return false;
     }
+
+ */
 //ретурн тру все касания (можно перемещать)
 // ретурн фолз только первое
 }

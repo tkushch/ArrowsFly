@@ -4,14 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-public class Sky {
+public class Skyold {
     int maxX, maxY;
     final int numStars = 500;
     int[] xStar = new int[numStars];
     int[] yStar = new int[numStars];
     int[] alphaStar = new int[numStars];
 
-    Sky() {
+    Skyold() {
         this.maxX = 2000;
         this.maxY = 2000;
         for (int i = 0; i < numStars; i++) {
