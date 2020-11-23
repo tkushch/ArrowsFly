@@ -29,6 +29,10 @@ public class MyDraw extends View {
         this.bounces = new Bounce[nrockets];
     }
 
+    public void setNrockets(int nrockets) {
+        this.nrockets = nrockets;
+    }
+
 
     @Override
     protected void onDraw(Canvas canvas) {

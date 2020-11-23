@@ -2,12 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}">
 
-    <ru.samsung.itschool.spacearrays.MyDraw
-        android:id="@+id/myDraw1"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:text="Назад"
+            android:textColor="#FFFFFF" />
+
+        <ru.samsung.itschool.spacearrays.MyDraw
+            android:id="@+id/myDraw1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>

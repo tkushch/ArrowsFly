@@ -11,34 +11,50 @@
 9-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:7:5-21:19
+11-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:7:5-28:19
 12        android:allowBackup="true"
 12-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:8:9-35
-13        android:debuggable="true"
-14        android:icon="@drawable/ic_launcher"
-14-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:9:9-45
-15        android:label="@string/app_name"
-15-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:10:9-41
-16        android:testOnly="true"
-17        android:theme="@style/AppTheme" >
-17-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:11:9-40
-18        <activity
-18-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:12:9-20:20
-19            android:name="ru.samsung.itschool.spacearrays.MainActivity"
-19-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:13:13-72
-20            android:label="@string/app_name" >
-20-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:14:13-45
-21            <intent-filter>
-21-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:15:13-19:29
-22                <action android:name="android.intent.action.MAIN" />
-22-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:17-69
-22-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:25-66
-23
-24                <category android:name="android.intent.category.LAUNCHER" />
-24-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:18:17-77
-24-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:18:27-74
-25            </intent-filter>
-26        </activity>
-27    </application>
-28
-29</manifest>
+13        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+13-->[com.android.support:support-compat:28.0.0] C:\Users\timof\.gradle\caches\transforms-2\files-2.1\1f9385f7125c30253301b4e2e50e4a01\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+14        android:debuggable="true"
+15        android:icon="@drawable/ic_launcher"
+15-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:9:9-45
+16        android:label="@string/app_name"
+16-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:10:9-41
+17        android:testOnly="true"
+18        android:theme="@style/AppTheme" >
+18-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:11:9-40
+19        <activity android:name="ru.samsung.itschool.spacearrays.StartPageActivity" >
+19-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:12:9-18:20
+19-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:12:19-52
+20            <intent-filter>
+20-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:13:13-17:29
+21                <action android:name="android.intent.action.MAIN" />
+21-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:14:17-69
+21-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:14:25-66
+22
+23                <category android:name="android.intent.category.LAUNCHER" />
+23-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:17-77
+23-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:27-74
+24            </intent-filter>
+25        </activity>
+26        <activity
+26-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:19:9-27:20
+27            android:name="ru.samsung.itschool.spacearrays.MainActivity"
+27-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:20:13-41
+28            android:label="@string/app_name" >
+28-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:21:13-45
+29            <intent-filter>
+29-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:13:13-17:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:14:17-69
+30-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:14:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:17-77
+32-->C:\Users\timof\StudioProjects\SpaceArrays\app\src\main\AndroidManifest.xml:16:27-74
+33            </intent-filter>
+34        </activity>
+35    </application>
+36
+37</manifest>
