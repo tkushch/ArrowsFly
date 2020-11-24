@@ -14,8 +14,8 @@ public class MyDraw extends View {
     private Star[] stars;
     //private Rocket[] rockets;
     private Bounce[] bounces;
-    private int nrockets = 5;
-    private int nstars = 500;
+    private int nrockets = 500;
+    private int nstars = 550;
     private boolean first = true;
     private Paint paint = new Paint();
     //private Bitmap rocketImage = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
@@ -74,11 +74,15 @@ public class MyDraw extends View {
         }
 
          */
-        for (Bounce bounce : bounces) {
-            bounce.draw(canvas, paint);
-            bounce.move(canvas);
+        for (int i = 0; i < nrockets; i++) {
+            bounces[i].draw(canvas, paint);
+            bounces[i].move(canvas);
         }
         invalidate();
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 
     protected int rnd(int min, int max) {

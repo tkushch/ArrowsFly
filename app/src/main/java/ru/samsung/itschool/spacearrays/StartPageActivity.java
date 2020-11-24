@@ -14,7 +14,7 @@ public class StartPageActivity extends Activity implements View.OnClickListener 
     private Button b1;
     private EditText editText;
     private TextView message;
-    private boolean isok = true;
+    private boolean isok = false;
     private int n;
 
     @Override
@@ -32,12 +32,23 @@ public class StartPageActivity extends Activity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v == findViewById(R.id.begin)) {
-            isok = true;
-            n = Integer.parseInt(editText.getText().toString());
+            try {
+                n = Integer.parseInt(editText.getText().toString());
+                if (n < 500) {
+                    isok = true;
+                }
+
+            } catch (java.lang.NumberFormatException e) {
+                message.setText("Некорректное значение");
+                isok = false;
+            }
             if (isok) {
+                message.setText("Введите количество ракет");
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra("numb", n);
                 startActivity(intent);
+            } else {
+                message.setText("Некорректное значение");
             }
 
 
@@ -47,14 +58,6 @@ public class StartPageActivity extends Activity implements View.OnClickListener 
 
 }
 
-            /*try{
-                n = Integer.parseInt(editText.getText().toString());
-                isok = true;
+/*
 
-            }
-            catch (ParcelFormatException e){
-                message.setText("Некорректное значение");
-                isok = false;
-            }
-
-             */
+ */
