@@ -43,7 +43,7 @@ public class StartPageActivity extends Activity implements View.OnClickListener 
                 isok = false;
             }
             if (isok) {
-                message.setText("Введите количество ракет");
+                message.setText("Введите количество шаров");
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra("numb", n);
                 startActivity(intent);
