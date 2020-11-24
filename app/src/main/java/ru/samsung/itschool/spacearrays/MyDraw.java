@@ -110,10 +110,10 @@ public class MyDraw extends View {
         // координаты Touch-события
         int evX = (int) event.getX();
         int evY = (int) event.getY();
-        for (Bounce bounce : bounces) {
-            int x = bounce.getX();
-            int y = bounce.getY();
-            int side = bounce.getSide();
+        for (int i = 0; i < nrockets; i++) {
+            int x = bounces[i].getX();
+            int y = bounces[i].getY();
+            int side = bounces[i].getSide();
 
             switch (event.getAction()) {
                 // касание началось
@@ -121,19 +121,19 @@ public class MyDraw extends View {
                     // если касание было начато в пределах квадрата
                     if (evX >= x && evX <= x + side && evY >= y && evY <= y + side) {
                         // включаем режим перетаскивания
-                        bounce.setDrag(true);
+                        bounces[i].setDrag(true);
                         // разница между левым верхним углом квадрата и точкой касания
-                        bounce.setDragX(evX - x);
-                        bounce.setDragY(evY - y);
+                        bounces[i].setDragX(evX - x);
+                        bounces[i].setDragY(evY - y);
                     }
                     break;
                 // тащим
                 case MotionEvent.ACTION_MOVE:
                     // если режим перетаскивания включен
-                    if (bounce.isDrag()) {
+                    if (bounces[i].isDrag()) {
                         // определеяем новые координаты для рисования
-                        bounce.setX(evX - bounce.getDragX());
-                        bounce.setY(evY - bounce.getDragY());
+                        bounces[i].setX(evX - bounces[i].getDragX());
+                        bounces[i].setY(evY - bounces[i].getDragY());
                         // перерисовываем экра
                         invalidate();
                     }
@@ -141,7 +141,7 @@ public class MyDraw extends View {
                 // касание завершено
                 case MotionEvent.ACTION_UP:
                     // выключаем режим перетаскивания
-                    bounce.setDrag(false);
+                    bounces[i].setDrag(false);
                     break;
             }
         }
